@@ -1,11 +1,20 @@
 # Tensor.squeeze()
 
+Returns a tensor with all the dimensions of input of size 1 removed.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[[1, 2, 3]], [[3, 4, 5]], [[5, 6, 7]]])
+a1 = a1.squeeze()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[1. 2. 3.]
+ [3. 4. 5.]
+ [5. 6. 7.]]
 ```

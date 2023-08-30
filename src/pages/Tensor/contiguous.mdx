@@ -1,11 +1,19 @@
 # Tensor.contiguous()
 
+Returns a contiguous in memory tensor containing the same data as self tensor. If self tensor is already in memory and has the same TensorOptions, this function returns self.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1.5, 5, 2, 3], [1, 2, 3, 4]])
+a1 = a1.contiguous()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[1.5 5.  2.  3. ]
+ [1.  2.  3.  4. ]]
 ```

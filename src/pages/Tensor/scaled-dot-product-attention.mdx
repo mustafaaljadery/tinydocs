@@ -1,11 +1,24 @@
 # Tensor.scaled_dot_product_attention()
 
+Returns the scaled dot product attention of two tensors.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+a2 = Tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]])
+a3 = Tensor([[False, True, True], [False, False, True], [False, False, False]])
+
+a1 = a1.scaled_dot_product_attention(a1, a2, a3)
+
+print(a1.numpy())
 ```
 
 ## Return value
-```bash
 
+```bash
+[[0.6999908  0.79999083 0.8999908 ]
+ [0.7        0.8        0.9       ]
+ [0.7        0.8        0.9       ]]
 ```

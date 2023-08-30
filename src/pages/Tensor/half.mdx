@@ -1,11 +1,18 @@
 # Tensor.half()
 
+Changes the dtype of the tensor to float16.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2], [3, 4]])
+a1 = a1.half()
+
+print(a1)
 ```
 
 ## Return value
 ```bash
-
+<Tensor <LB (2, 2) dtypes.half op=UnaryOps.CAST st=ShapeTracker(shape=(2, 2), views=[View(shape=(2, 2), strides=(2, 1), offset=0, mask=None, contiguous=True, shape_strides=((4, 1),))], var_vals={})> on GPU with grad None>
 ```

@@ -1,9 +1,19 @@
 # Tensor.shrink()
 
+Returns a tensor with the specified dimensions removed.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
+
+a1 = Tensor([[1, 2, 3], [3, 4, 5], [5, 6, 7]])
+a1 = a1.shrink((((0, 2), (1, 2))))
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
+[[2.]
+ [4.]]
 ```

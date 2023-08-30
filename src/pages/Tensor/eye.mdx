@@ -1,5 +1,21 @@
 # Tensor.eye()
 
+Returns the identity tensor of size n x n.
+
 ## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+a1 = Tensor.eye(5)
+
+print(a1.numpy())
+```
 
 ## Return value
+```bash
+[[1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 1.]]
+```

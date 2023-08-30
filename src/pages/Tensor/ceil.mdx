@@ -1,11 +1,18 @@
 # Tensor.ceil()
 
+Returns the ceiling of the input, element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1.23423, 2, 3, 4]])
+a1 = a1.ceil()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[2. 2. 3. 4.]]
 ```

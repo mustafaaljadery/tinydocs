@@ -1,11 +1,17 @@
 # Tensor.mish()
 
+Returns the Mish activation function applied to the Tensor, element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3, 4])
+
+print(a1.mish().numpy())
 ```
 
 ## Return value
 ```bash
-
+[0.86509836 1.9439588  2.986535   3.9974122 ]
 ```

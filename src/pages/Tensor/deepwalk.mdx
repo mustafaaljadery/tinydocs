@@ -1,11 +1,22 @@
 # Tensor.deepwalk()
 
+Returns a list of all the tensors in the graph that are reachable from the current tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+out = Tensor([1, 2, 3, 4])
+y = Tensor([1, 2, 3, 4])
+
+loss = out.mul(y).mean()
+
+loss = loss.deepwalk()
+
+print(loss)
 ```
 
 ## Return value
 ```bash
-
+[]
 ```

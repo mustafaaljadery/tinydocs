@@ -1,11 +1,20 @@
 # Tensor.mul()
 
+Returns the element-wise multiplication of two tensors.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3])
+a2 = Tensor([1, 2, 3])
+
+a1 = a1.mul(a2)
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[1. 4. 9.]
 ```

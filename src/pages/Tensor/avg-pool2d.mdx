@@ -1,11 +1,19 @@
 # Tensor.avg_pool2d()
 
+Returns the average value of each 2x2 block of the input tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2], [3, 4]])
+a1 = a1.avg_pool2d()
+
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[2.5]]
 ```

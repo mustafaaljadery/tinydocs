@@ -1,11 +1,18 @@
 # Tensor.nbytes()
 
+Returns the number of bytes used by the tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3, 4])
+a1 = a1.nbytes()
+
+print(a1)
 ```
 
 ## Return value
 ```bash
-
+16
 ```

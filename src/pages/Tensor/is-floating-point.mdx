@@ -1,11 +1,18 @@
 # Tensor.is_floating_point()
 
+Returns True if the data type of the Tensor is floating point, False otherwise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3, 4])
+a1 = a1.is_floating_point()
+
+print(a1)
 ```
 
 ## Return value
 ```bash
-
+True
 ```

@@ -1,12 +1,20 @@
 # Tensor.pad()
 
+Returns the tensor with the specified padding.
+
 ## Usage
 
 ```python copy
+from tinygrad.tensor import Tensor
+
+a1 = Tensor([[1, 2, 3], [3, 4, 5]])
+a1 = a1.pad(((0, 0), (0, 1)))
+
+print(a1.numpy())
 ```
 
 ## Return value
-
-```
-
+```bash
+[[1. 2. 3. 0.]
+ [3. 4. 5. 0.]]
 ```

@@ -1,11 +1,23 @@
 # Tensor.linear()
 
+Returns the linear transformation of the input tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2], [4, 5], [7, 8]])
+weights = Tensor([[1, 2], [3, 4]])
+bias = Tensor([1, 2])
+
+tensor = a1.linear(weights, bias)
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[ 8. 12.]
+ [20. 30.]
+ [32. 48.]]
 ```

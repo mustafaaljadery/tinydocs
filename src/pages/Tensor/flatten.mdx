@@ -1,11 +1,19 @@
 # Tensor.flatten()
 
+Returns the flattened tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor.rand(3, 3)
+a1 = a1.flatten(0)
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0.3208447  0.4943661  0.9998585  0.47179747 0.08530778 0.58882844
+ 0.13911712 0.55939734 0.75217736]
 ```

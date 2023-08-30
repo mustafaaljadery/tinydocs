@@ -1,11 +1,20 @@
 # Tensor.triu()
 
+Returns the upper triangular part of a matrix (2-D tensor) or batch of matrices input, the other elements of the result tensor out are set to 0.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+a1 = a1.triu()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[1. 2. 3.]
+ [0. 5. 6.]
+ [0. 0. 9.]]
 ```

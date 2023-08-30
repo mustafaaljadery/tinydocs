@@ -1,11 +1,20 @@
 # Tensor.add()
 
+Returns the sum of the two tensors.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3])
+a2 = Tensor([1, 2, 3])
+
+a1 = a1.add(a2)
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[2. 4. 6.]
 ```

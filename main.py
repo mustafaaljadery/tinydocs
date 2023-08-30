@@ -1,6 +1,10 @@
 from tinygrad.tensor import Tensor
 
-tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
-tensor = tensor.exp()
+out = Tensor([1, 2, 3, 4])
+y = Tensor([1, 2, 3, 4])
 
-print(tensor.numpy())
+loss = out.mul(y).mean()
+
+loss = loss.backward()
+
+print(loss)

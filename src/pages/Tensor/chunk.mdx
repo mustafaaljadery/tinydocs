@@ -1,11 +1,21 @@
 # Tensor.chunk()
 
+Returns the specified chunks of the tensor as a list.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3, 4]])
+a1 = a1.chunk(2, 1)
+
+
+print(a1[0].numpy())
+print(a1[1].numpy())
 ```
 
 ## Return value
 ```bash
-
+[[1. 2.]]
+[[3. 4.]]
 ```

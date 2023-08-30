@@ -1,11 +1,20 @@
 # Tensor.clip()
 
+Returns the clipped tensor with the specified minimum and maximum values.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+a1 = a1.clip(1, 2)
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[1. 2. 2.]
+ [2. 2. 2.]
+ [2. 2. 2.]]
 ```

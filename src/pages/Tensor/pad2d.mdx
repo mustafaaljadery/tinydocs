@@ -1,11 +1,19 @@
 # Tensor.pad2d()
 
+Returns the tensor with zero padding of size (pad, pad) on both sides of the input tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3], [3, 4, 5]])
+a1 = a1.pad2d((1, 0))
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[0. 1. 2. 3.]
+ [0. 3. 4. 5.]]
 ```

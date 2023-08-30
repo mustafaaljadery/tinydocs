@@ -1,11 +1,19 @@
 # Tensor.quick_gelu()
 
+Returns the value of the Quick Gaussian Error Linear Unit function applied to the specified tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([[1, 2, 3], [3, 4, 5]])
+a1 = a1.quick_gelu()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[[0.8457958 1.9356586 2.9819288]
+ [2.9819288 3.995585  4.998993 ]]
 ```

@@ -1,11 +1,20 @@
 # Tensor.dropout()
 
+Returns the input tensor with random elements set to zero.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+Tensor.training = True
+
+a1 = Tensor([1, 2, 3, 4, 5])
+a1 = a1.dropout()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[2. 0. 6. 8. 0.]
 ```

@@ -1,11 +1,32 @@
 # Tensor.conv_transpose2d()
 
+Returns the convolution transpose of the input tensor. More specifically, the output is computed by sliding the filters over the input tensor, computing the dot product of the filter's weights with the values in the input tensor that the filter is currently on top of, and then adding the bias term. This is the opposite of the convolution operation, which does sliding dot products between the input and the filter weights.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([
+    [[1, 2], [4, 5]],
+    [[10, 11], [13, 14]]
+])
+weights = Tensor([
+    [[1, 2], [4, 5]],
+    [[10, 11], [13, 14]]
+])
+
+bias = Tensor([1, 2])
+
+tensor = a1.conv_transpose2d(weights, bias)
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
+[[[ 42.  99.  60.]
+  [ 58. 136.  82.]]
 
+ [[141. 315. 177.]
+  [211. 460. 253.]]]
 ```

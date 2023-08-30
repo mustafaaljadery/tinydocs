@@ -1,12 +1,21 @@
 # Tensor.bitcast()
 
+Bitcasts a tensor to a new type.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
+from tinygrad.helpers import dtypes
 
+a1 = Tensor([[1, 2], [3, 4]])
+a1 = a1.bitcast(dtypes.float32)
+
+print(a1.numpy())
 ```
 
 ## Return value
 
 ```bash
-
+[[1. 2.]
+ [3. 4.]]
 ```

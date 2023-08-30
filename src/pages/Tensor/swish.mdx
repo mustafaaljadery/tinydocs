@@ -1,11 +1,18 @@
 # Tensor.swish()
 
+Returns the swish of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3, 4])
+a1 = a1.swish()
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0.7310586 1.7615942 2.8577223 3.928055 ]
 ```

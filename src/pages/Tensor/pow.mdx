@@ -1,11 +1,20 @@
 # Tensor.pow()
 
+Return the power of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([1, 2, 3])
+a2 = Tensor([1, 2, 3])
+
+a1 = a1.pow(a2)
+
+print(a1.numpy())
 ```
 
 ## Return value
 ```bash
-
+[ 1.        4.       27.000002]
 ```

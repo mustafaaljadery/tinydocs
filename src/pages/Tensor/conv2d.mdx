@@ -1,11 +1,32 @@
 # Tensor.conv2d()
 
+Returns the convolution of the tensor by the weights and bias.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+a1 = Tensor([
+    [[1, 2], [4, 5]],
+    [[10, 11], [13, 14]]
+])
+weights = Tensor([
+    [[1, 2], [4, 5]],
+    [[10, 11], [13, 14]]
+])
+
+bias = Tensor([1, 2])
+
+tensor = a1.conv2d(weights, bias)
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
+[[[ 47.]
+  [156.]]
 
+ [[155.]
+  [588.]]]
 ```
