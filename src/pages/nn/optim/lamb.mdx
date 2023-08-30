@@ -23,5 +23,20 @@ for _ in range(5):
 ### params
 The parameters of the model to optimize.
 
-### lr
+### lr (default: 0.001)
 The learning rate of the optimizer.
+
+## b1 (default: 0.9)
+The exponential decay rate for the first moment estimates.
+
+## b2 (default: 0.999)
+The exponential decay rate for the second-moment estimates.
+
+## eps (default: 1e-8)
+The epsilon value for numerical stability.
+
+## wd (default: 0.0)
+The weight decay value to apply.
+
+## Adam (default: False)
+The Adam optimizer is used instead of LAMB if set to True.
