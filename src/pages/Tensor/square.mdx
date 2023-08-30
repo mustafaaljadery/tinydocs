@@ -1,11 +1,18 @@
 # Tensor.square()
 
+Returns the element-wise square of the tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3, 4, 5])
+tensor = tensor.square()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[ 1.  4.  9. 16. 25.]
 ```

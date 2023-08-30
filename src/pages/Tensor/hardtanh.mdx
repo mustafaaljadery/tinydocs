@@ -1,11 +1,18 @@
 # Tensor.hardtanh()
 
+Returns the hardtanh of the elements of input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.hardtanh()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-1. -1.  1.  1.  1.  1.  1.]
 ```

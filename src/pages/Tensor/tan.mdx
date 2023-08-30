@@ -1,11 +1,18 @@
 # Tensor.tan()
 
+Returns the tan of the input tensor, element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3, 4, 5])
+tensor = tensor.tan()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[ 1.5574077  -2.1850402  -0.14254655  1.157821   -3.380517  ]
 ```

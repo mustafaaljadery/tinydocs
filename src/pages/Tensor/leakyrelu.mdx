@@ -1,11 +1,18 @@
 # Tensor.leakyrelu()
 
+Returns the leaky ReLU of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.leakyrelu()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-0.01 -0.05  1.    2.    3.    4.    5.  ]
 ```

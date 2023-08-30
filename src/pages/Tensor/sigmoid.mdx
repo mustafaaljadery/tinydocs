@@ -1,11 +1,18 @@
 # Tensor.sigmoid()
 
+Returns a new tensor with the sigmoid of the elements of input tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-2, -3, -2, -1, 5, 6])
+tensor = tensor.sigmoid()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0.11920293 0.04742588 0.11920293 0.26894143 0.9933071  0.9975274 ]
 ```

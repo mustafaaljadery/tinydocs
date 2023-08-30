@@ -1,11 +1,19 @@
 # Tensor.elu()
 
+Returns the exponential linear activation: `x` if `x > 0` and `alpha * (exp(x)-1)` if `x < 0`.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.elu()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-0.63212055 -0.99326205  1.          2.          3.          4.
+  5.        ]
 ```

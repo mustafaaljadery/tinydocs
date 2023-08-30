@@ -1,11 +1,18 @@
 # Tensor.relu6()
 
+Returns the relu6 of the tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.relu6()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0. 0. 1. 2. 3. 4. 5.]
 ```

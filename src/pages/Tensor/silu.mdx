@@ -1,11 +1,18 @@
 # Tensor.silu()
 
+Returns the scaled inverse linear unit (SiLU) activation function: `x * sigmoid(x)`.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-2, -3, -2, -1, 0, 6])
+tensor = tensor.silu()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-0.23840585 -0.14227763 -0.23840585 -0.26894143  0.          5.9851646 ]
 ```

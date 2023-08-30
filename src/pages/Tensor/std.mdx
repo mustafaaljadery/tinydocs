@@ -1,11 +1,18 @@
 # Tensor.std()
 
+Returns the standard deviation of the tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3, 4, 5])
+tensor = tensor.std()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+1.5811388
 ```

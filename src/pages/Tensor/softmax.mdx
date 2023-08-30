@@ -1,11 +1,19 @@
 # Tensor.softmax()
 
+Returns a tensor with the softmax of the elements of the input tensor.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-2, -3, -2, -1, 0, 6])
+tensor = tensor.softmax()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[3.3406459e-04 1.2289552e-04 3.3406459e-04 9.0808142e-04 2.4684223e-03
+ 9.9583244e-01]
 ```

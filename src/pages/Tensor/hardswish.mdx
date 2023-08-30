@@ -1,11 +1,19 @@
 # Tensor.hardswish()
 
+Returns the hardswish of the elements of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.hardswish()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-0.33333334 -0.          0.6666667   1.6666667   3.          4.
+  5.        ]
 ```

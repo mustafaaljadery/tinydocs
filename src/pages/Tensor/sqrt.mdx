@@ -1,11 +1,18 @@
 # Tensor.sqrt()
 
+Returns the sqrt of the tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3, 4, 5])
+tensor = tensor.sqrt()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[1.        1.4142135 1.7320508 2.        2.2360678]
 ```

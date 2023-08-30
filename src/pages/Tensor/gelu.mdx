@@ -1,11 +1,19 @@
 # Tensor.gelu()
 
+Returns the Gaussian Error Linear Unit (GELU) of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.gelu()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[-1.5880799e-01 -2.9802322e-07  8.4119201e-01  1.9545978e+00
+  2.9963627e+00  3.9999299e+00  5.0000000e+00]
 ```

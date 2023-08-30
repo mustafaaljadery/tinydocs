@@ -1,11 +1,18 @@
 # Tensor.log()
 
+Returns the natural logarithm of the input tensor, element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.log()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[      nan       nan 0.        0.6931472 1.0986123 1.3862944 1.6094378]
 ```

@@ -1,11 +1,18 @@
 # Tensor.relu()
 
+Returns a new tensor with the relu of the elements of input.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-2, 1, 2, 3, 4, 5, 6])
+tensor = tensor.relu()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0. 1. 2. 3. 4. 5. 6.]
 ```

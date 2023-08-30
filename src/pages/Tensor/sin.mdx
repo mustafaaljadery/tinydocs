@@ -1,11 +1,20 @@
 # Tensor.sin()
 
-## Usage
-```python copy
+Returns the sine of the specified input tensor, element-wise.
 
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([-2, -3, -2, -1, 0, 6])
+tensor = tensor.sin()
+
+print(tensor.numpy())
 ```
 
 ## Return value
-```bash
 
+```bash
+[-0.90929747 -0.14112    -0.90929747 -0.841471    0.         -0.2794155 ]
 ```

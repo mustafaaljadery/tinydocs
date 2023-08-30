@@ -1,11 +1,19 @@
 # Tensor.exp()
 
+Returns the exponential of the elements of the input tensor, element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([-1, -5, 1, 2, 3, 4, 5])
+tensor = tensor.exp()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[3.6787945e-01 6.7379465e-03 2.7182817e+00 7.3890562e+00 2.0085535e+01
+ 5.4598148e+01 1.4841316e+02]
 ```

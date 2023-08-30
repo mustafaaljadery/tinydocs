@@ -1,11 +1,18 @@
 # Tensor.tanh()
 
+Returns the hyperbolic tangent of the input tensor element-wise.
+
 ## Usage
 ```python copy
+from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3, 4, 5])
+tensor = tensor.tanh()
+
+print(tensor.numpy())
 ```
 
 ## Return value
 ```bash
-
+[0.7615942  0.9640275  0.99505484 0.9993293  0.99990916]
 ```
