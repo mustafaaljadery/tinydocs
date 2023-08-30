@@ -1,0 +1,21 @@
+# Tensor.rand()
+
+Creates a tensor with random values. The values are between 0 and 1.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+# create a tensor with random values
+x = Tensor.rand(3, 3)
+
+# print the random values tensor 
+print(x.numpy())
+```
+
+## Return value
+```bash
+[[0.3437884  0.9157805  0.08197123]
+ [0.38339686 0.25345033 0.2865516 ]
+ [0.8913077  0.9219154  0.12849283]]
+```

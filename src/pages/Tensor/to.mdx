@@ -1,0 +1,22 @@
+# Tensor.to()
+
+Moves the Tensor from CPU to GPU or vice versa.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+# create a tensor
+tensor = Tensor([[1, 2, 3, 4, 5]])
+
+# move my tensor to CPU
+tensor = tensor.to("CPU")
+
+# print the tensor
+print(tensor)
+```
+
+## Return value
+```bash
+<Tensor <LB (1, 5) dtypes.float op=LoadOps.FROM st=ShapeTracker(shape=(1, 5), views=[View(shape=(1, 5), strides=(0, 1), offset=0, mask=None, contiguous=True, shape_strides=((5, 1),))], var_vals={})> on CPU with grad None>
+```

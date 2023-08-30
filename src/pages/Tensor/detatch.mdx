@@ -1,0 +1,19 @@
+# Tensor.detatch
+
+Returns the same Tensor detached from the computation graph and with the `required_grad` flag set to `False`.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+# create a tensor
+tensor = Tensor([[1, 2, 3, 4, 5]])
+
+# detatch tensor
+print(tensor.detach())
+```
+
+## Return value
+```bash
+<Tensor <LB (1, 5) dtypes.float op=LoadOps.FROM st=ShapeTracker(shape=(1, 5), views=[View(shape=(1, 5), strides=(0, 1), offset=0, mask=None, contiguous=True, shape_strides=((5, 1),))], var_vals={})> on GPU with grad None>
+```

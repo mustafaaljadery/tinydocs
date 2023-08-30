@@ -1,0 +1,21 @@
+# Tensor.kaiming_uniform()
+
+Samples tensor elements according to the method described in [He et al., 2015](https://arxiv.org/abs/1502.01852).
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.kaiming_uniform(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[-1.2519342  -1.2201067  -1.4138567 ]
+ [-1.0121396   0.74073696  0.61008847]
+ [-0.6106109   0.8530831   0.13051805]] 
+```

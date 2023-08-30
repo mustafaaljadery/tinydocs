@@ -1,0 +1,33 @@
+# Tensor.permute()
+
+Changes the order of dimensions in a tensor.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.randn(1, 2, 3)
+
+print(tensor.numpy())
+
+tensor = tensor.permute(2, 1, 0)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[[-0.11514639 -0.59867996 -0.6747756 ]
+  [ 0.4061019   1.3095232   0.7891411 ]]]
+
+[[[-0.11514639]
+  [ 0.4061019 ]]
+
+ [[-0.59867996]
+  [ 1.3095232 ]]
+
+ [[-0.6747756 ]
+  [ 0.7891411 ]]]
+```

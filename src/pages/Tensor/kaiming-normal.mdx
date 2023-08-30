@@ -1,0 +1,19 @@
+# Tensor.kaiming_normal()
+
+Samples tensor elements according to the method described in [He et al., 2015](https://arxiv.org/abs/1502.01852) using a normal distribution.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.kaiming_normal(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+```bash
+[[-0.43342337  0.04244912  0.5609434 ]
+ [-0.99966764 -0.00925403  1.2957743 ]
+ [-0.36708504  0.8206572  -1.6821432 ]]    
+```

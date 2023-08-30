@@ -1,0 +1,21 @@
+# Tensor.flip()
+
+Reverses the order of a tensor along the specified axes.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([[1, 2], [3, 4]])
+tensor = tensor.flip(0)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[3. 4.]
+ [1. 2.]]
+```

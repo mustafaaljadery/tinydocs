@@ -1,0 +1,21 @@
+# Tensor.normal()
+
+Creates a tensor with values drawn from a normal distribution of mean 0 and variance 1 (also called the standard normal distribution) with the specified shape.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.normal(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[ 1.8869411  -0.6977681   2.087624  ]
+ [ 0.2124444  -1.7676528   0.3035886 ]
+ [ 0.4465527  -0.15774664  1.5492326 ]] 
+```

@@ -1,0 +1,21 @@
+# Tensor.uniform()
+
+Creates a tensor with values between -1 and 1 with the specified size.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.uniform(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[ 0.41614687  0.1861912   0.8369913 ]
+ [-0.89591384 -0.7310953  -0.49133945]
+ [ 0.6045852  -0.9663323   0.72094643]]    
+```

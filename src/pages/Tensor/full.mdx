@@ -1,0 +1,21 @@
+# Tensor.full()
+
+Creates a tensor with all elements set to a specified value.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+# create a 3x3 tensor with all elements set to 2
+x = Tensor.full((3, 3), 2)
+
+# print the tensor
+print(x.numpy())
+```
+
+## Return value
+```bash
+[[2. 2. 2.]
+ [2. 2. 2.]
+ [2. 2. 2.]]
+```

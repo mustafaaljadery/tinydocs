@@ -1,1 +1,20 @@
-# Hello Wrold
+# tinygrad
+
+The goal of tinygrad is to make the simplest machine learning framework there is.
+
+Due to its extreme simplicity, it aims to be the easiest framework to add new accelerators to, with support for both inference and training. If XLA is CISC, tinygrad is RISC.
+
+## Accelerators
+- [X] CPU
+- [X] CPU
+- [X] GPU (OpenCL)
+- [X] C Code (Clang)
+- [X] LLVM
+- [X] METAL
+- [X] CUDA
+- [X] Triton
+- [X] PyTorch
+- [X] HIP
+- [X] WebGPU
+
+And it is easy to add more! Your accelerator of choice only needs to support a total of 26 (optionally 27) low level ops. More information can be found in the [documentation for adding new accelerators](https://github.com/tinygrad/tinygrad/blob/master/docs/adding_new_accelerators.md).

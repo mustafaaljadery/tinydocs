@@ -1,0 +1,22 @@
+# Tensor.ones_like()
+
+Creates a tensor with all elements set to 1 with the same shape, dtype, and device as the input tensor.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([[1, 2], [3, 4]])
+
+x = Tensor.ones_like(tensor)
+
+print(x.numpy())
+```
+
+## Return value
+
+```bash
+[[1. 1.]
+ [1. 1.]]
+```

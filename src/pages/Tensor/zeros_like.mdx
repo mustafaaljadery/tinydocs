@@ -1,0 +1,22 @@
+# Tensor.zero_like()
+
+Creates a tensor with all elements set to zero with the same shape and dtype as the given tensor.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([[1, 2], [3, 4]])
+
+x = Tensor.zeros_like(tensor)
+
+print(x.numpy())
+```
+
+## Return value
+
+```bash
+[[0. 0.]
+ [0. 0.]]
+```

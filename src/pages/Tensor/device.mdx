@@ -1,0 +1,21 @@
+# Tensor.device
+
+Returns the device where the tensor is stored. (CPU or GPU)
+
+This is a property that can be used within a tensor. This is a read only property.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+# create some tensor
+tensor = Tensor([1, 2, 3, 4, 5])
+
+# get the device
+print(tensor.device)
+```
+
+## Return value
+```bash
+GPU
+```

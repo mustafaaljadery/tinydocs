@@ -1,0 +1,18 @@
+# Tensor.arange()
+
+Creates a 1-D tensor of size `end - start` with values from the interval `[start, end)` taken with common difference `step` beginning from `start`.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+x = Tensor.arange(0, 10, 2)
+
+print(x.numpy())
+```
+
+## Return value
+```bash
+[0. 2. 4. 6. 8.]
+```

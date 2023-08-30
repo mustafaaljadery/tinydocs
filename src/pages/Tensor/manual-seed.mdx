@@ -1,0 +1,30 @@
+# Tensor.manual_seed()
+
+Sets the seed for generating random numbers for all devices.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+# set the seed
+Tensor.manual_seed(1337)
+x = Tensor.rand(2, 3)
+
+# set the seed again
+Tensor.manual_seed(1337)
+y = Tensor.rand(2, 3)
+
+# print the same random tensors
+print(x.numpy())
+print(y.numpy())
+```
+
+## Return value
+
+```bash
+[[0.3725149  0.6533645  0.3967867 ]
+ [0.31979865 0.6966881  0.3057388 ]]
+[[0.3725149  0.6533645  0.3967867 ]
+ [0.31979865 0.6966881  0.3057388 ]]
+```

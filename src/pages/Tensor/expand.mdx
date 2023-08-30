@@ -1,0 +1,20 @@
+# Tensor.expand()
+
+Returns a new view of the tensor with singleton dimensions expanded to a larger size.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([[1], [2], [3]])
+tensor = tensor.expand(3, 4)
+
+print(tensor.numpy())
+```
+
+## Return value
+```bash
+[[1. 1. 1. 1.]
+ [2. 2. 2. 2.]
+ [3. 3. 3. 3.]]
+```

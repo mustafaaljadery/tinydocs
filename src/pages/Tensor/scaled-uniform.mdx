@@ -1,0 +1,21 @@
+# Tensor.scaled_uniform()
+
+Generates a tensor of random values from a uniform distribution and scales the tensor by a factor proportional to the square root of the product of the tensor's shape dimensions.
+
+## Usage
+
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.scaled_uniform(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+
+```bash
+[[ 0.05666578  0.32397062  0.0690138 ]
+ [ 0.05537931  0.18648589 -0.24747562]
+ [-0.11055386 -0.1891321  -0.16025254]]  
+```

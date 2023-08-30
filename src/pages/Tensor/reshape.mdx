@@ -1,0 +1,21 @@
+# Tensor.reshape()
+
+Returns a tensor that is a reshaped version of the original tensor.
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor([[1, 2], [3, 4]])
+tensor = tensor.reshape(4, 1)
+
+print(tensor.numpy())
+```
+
+## Return value
+```bash
+[[1.]
+ [2.]
+ [3.]
+ [4.]]
+```

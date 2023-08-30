@@ -2,11 +2,24 @@
 
 Used to convert a tensor to a numpy array.
 
+Remember the numpy array is in CPU.
+
 ## Usage
 
-```python
+```python copy
 from tinygrad.tensor import Tensor
 
+tensor = Tensor([1, 2, 3])
+
+# Convert to numpy array
+numpy_array = tensor.numpy()
+
+# Print output
+print(numpy_array)
 ```
 
 ## Return Value
+```bash
+[1., 2., 3.]
+```
+

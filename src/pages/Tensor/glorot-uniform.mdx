@@ -1,0 +1,21 @@
+# Tensor.glort_uniform()
+
+A method for weight initialization of a tensor with a uniform distribution. 
+
+[Paper link](https://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf)
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.glorot_uniform(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+```bash
+[[ 4.01388645e-01 -1.20162964e-04 -4.05807972e-01]
+ [-7.71492124e-01 -4.59152102e-01  1.59986973e-01]
+ [-1.15628719e-01  4.85111117e-01  8.84148717e-01]]
+```

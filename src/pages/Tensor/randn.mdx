@@ -1,0 +1,21 @@
+# Tensor.randn()
+
+Box-Muller transform to generate random numbers with the specified tensor shape.
+
+[Read more about Box-Muller transform](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform)
+
+## Usage
+```python copy
+from tinygrad.tensor import Tensor
+
+tensor = Tensor.randn(3, 3)
+
+print(tensor.numpy())
+```
+
+## Return value
+```bash
+[[-0.42835626 -1.4794476   0.00834473]
+ [ 1.4047892   0.04574781  0.40971082]
+ [ 1.4762126   0.88406277  0.7959993 ]]  
+```
