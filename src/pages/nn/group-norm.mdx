@@ -1,16 +1,32 @@
 # GroupNorm
 
+Applies Group Normalization over a mini-batch of inputs as described in the paper [Group Normalization](https://arxiv.org/abs/1803.08494).
+
+[Learn more about GroupNorm](https://paperswithcode.com/method/group-normalization)
+
 ## Usage
+```python copy
+from tinygrad.nn import GroupNorm
 
-## Return Value
+BS, H, W, C, G = 20, 10, 10, 6, 3
 
+layer = GroupNorm(G, C)
+```
 
 ## Arguments
 
 ### num_groups
 
+The number of groups to separate the channels into. Each group will be normalized separately. Must be a divisor of the number of channels in the input.
+
 ### num_channels
+
+The number of channels expected in input. The input should have `num_channels` from an expected input of size `batch_size x num_channels [x d1 [x ... [x dk]]]`.
 
 ### eps (default: 1e-5)
 
+The epsilon value added for numerical stability.
+
 ### affine (default: True)
+
+The affine flag. If True, this module has learnable per-element affine parameters initialized to ones (for weights) and zeros (for biases).

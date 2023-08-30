@@ -1,13 +1,25 @@
 # LayerNorm
 
-## Usage
+Applies Layer Normalization over a mini-batch of inputs as described in the paper [Layer Normalization](https://arxiv.org/abs/1607.06450).
 
-## Return Value
+## Usage
+```python copy
+from tinygrad.nn import LayerNorm
+
+dims=[96, 192, 384, 768]
+
+ln = LayerNorm(dims[-1])
+```
 
 ## Arguments
 
 ### normalized_shape
+The shape of the input tensor from an expected input of size batch_size x \* x \* input_dim. If input_dim is omitted, it is automatically inferred as the last dimension of the input tensor.
 
 ### eps (default: 1e-5)
 
+The epsilon value to use to avoid division by zero.
+
 ### elementwise_affine (default: True)
+
+The elementwise affine operation applies a separate set of weights and biases for each channel (dimension) of the input.

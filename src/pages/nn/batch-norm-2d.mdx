@@ -5,18 +5,34 @@ Normalizes the activations of a NN layer across the batch of data you pass in.
 [Learn more about normalization](http://cs231n.stanford.edu/slides/2018/cs231n_2018_lecture07.pdf)
 
 ## Usage
+```python copy
+from tinygrad.nn import BatchNorm2d
+from tinygrad.tensor import Tensor
 
-## Return Value
+szs = [4, 8, 16, 32]
 
+Tensor.training = True
+bn = BatchNorm2d(szs[0], eps=1e-5, track_running_stats=False)
+```
 
 ## Arguments
 
 ### sz
 
+The number of features in the input tensor
+
 ### eps (default: 1e-05)
+
+The value added to the denominator for numerical stability
 
 ### affine (default: True)
 
+The affine transformation is a learnable scale and shift that is applied after normalization
+
 ### track_running_stats (default: True)
 
+The running mean and std are computed and used for normalization during training. During evaluation, they are used to normalize, but they are not updated.
+
 ### momentum (default: 0.1)
+
+The value used for the running_mean and running_var computation. Can be set to None for cumulative moving average (i.e. simple average). Default: 0.1

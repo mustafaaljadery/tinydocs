@@ -1,8 +1,8 @@
 {
-  "index": "Tinygrad",
+  "index": "tinygrad",
   "getting-started": "Getting Started",
   "examples": "Examples",
-  "tensor": "Tensor",
+  "tensor": "tensor",
   "nn": "nn",
   "contribution": "Contribution"
 }

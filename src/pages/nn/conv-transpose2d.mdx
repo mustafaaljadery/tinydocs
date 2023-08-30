@@ -1,24 +1,50 @@
 # ConvTranspose2d
 
-## Usage
+Applies a 2D transposed convolution operator over an input image composed of several input planes. The input tensor in forward(input) is expected to be a 4D tensor (nInputPlane x height x width).
 
-## Return
+[Learn more about ConvTranspose2d](https://d2l.ai/chapter_computer-vision/transposed-conv.html)
+
+## Usage
+```python copy
+from tinygrad.nn import ConvTranspose2d
+
+BS, C1, H, W = 4, 16, 224, 224
+C2, K, S, P = 64, 7, 2, 1
+
+layer = ConvTranspose2d(C1, C2, K, S, P)
+```
 
 
 ## Arguments
 
 ### in_channels
 
+The number of channels in the input image
+
 ### out_channels
+
+The number of channels produced by the convolution
 
 ### kernel_size
 
+The size of the convolving kernel
+
 ### stride (default=1)
+
+The stride of the convolution. Can be a single number or a tuple (sH, sW). Default: 1
 
 ### padding (default=0)
 
+The padding added to the input planes
+
 ### dilation (default=1)
+
+The spacing between kernel elements. Can be a single number or a tuple (dH, dW). Default: 1
 
 ### groups (default=1)
 
+The number of blocked connections from input channels to output channels. Default: 1
+
 ### bias (default=True)
+
+The bias added to the output

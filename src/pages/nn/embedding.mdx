@@ -1,11 +1,24 @@
 # Embedding
 
-## Usage
+The Embedding layer is used to create word embeddings.
 
-## Return Value
+[Learn more about Embeddings](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture#:~:text=An%20embedding%20is%20a%20relatively,like%20sparse%20vectors%20representing%20words.)
+
+## Usage
+```python copy
+from tinygrad.nn import Embedding
+
+class TinyNet: 
+  def __init__(self, dim, vocab_size=50257):
+    self.wte = Embedding(vocab_size, dim)
+```
 
 ## Arguments
 
 ### vocab_size 
 
+The size of the vocabulary. This is the maximum integer index + 1.
+
 ### embed_size
+
+The dimension of the dense embedding.

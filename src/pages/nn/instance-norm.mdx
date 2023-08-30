@@ -1,13 +1,28 @@
 # InstanceNorm
 
-## Usage
+Applies Instance Normalization over a 4D input (a mini-batch of 2D inputs with additional channel dimension) as described in the paper [Instance Normalization: The Missing Ingredient for Fast Stylization](https://arxiv.org/abs/1607.08022).
 
-## Return Value
+[Learn more about InstanceNorm](https://gaoxiangluo.github.io/2021/08/01/Group-Norm-Batch-Norm-Instance-Norm-which-is-better/)
+
+## Usage
+```python copy
+from tinygrad.nn import InstanceNorm 
+
+N, C, H, W = 20, 5, 10, 10
+
+layer = InstanceNorm(C)
+```
 
 ## Arguments
 
 ### num_features
 
+The number of channels or the number of features of the input tensor.
+
 ### eps (default: 1e-5)
 
+The epsilon value to avoid division by zero.
+
 ### affine (default: True)
+
+The flag indicating whether to apply the affine transformation or not.

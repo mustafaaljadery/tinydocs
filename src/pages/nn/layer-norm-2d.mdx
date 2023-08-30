@@ -1,13 +1,21 @@
 # LayerNorm2d
 
 ## Usage
+```python copy
+from tinygrad.nn import LayerNorm2d
 
-## Return Value
+dims=[96, 192, 384, 768]
+
+ln = LayerNorm2d(dims[0], eps=1e-6)
+```
 
 ## Arguments
 
 ### normalized_shape
+The shape of the input tensor from an expected input of size batch_size x * x C
 
 ### eps (default: 1e-05)
+The epsilon value added for numerical stability.
 
 ### elementwise_affine (default: True)
+The elementwise affine operation applies a per-element scale and bias to the normalized tensor. If set to False, this module will not learn a bias or scale.

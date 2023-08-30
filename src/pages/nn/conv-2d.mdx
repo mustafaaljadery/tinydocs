@@ -5,27 +5,46 @@
 [Learn more about convolutions](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
 
 ## Usage
+```python copy
+from tinygrad.nn import Conv2d
 
-## Return Value
+BS, C1, H, W = 4, 16, 224, 224
+C2, K, S, P = 64, 7, 2, 1
+
+# create in tinygrad
+layer = Conv2d(C1, C2, K, S, P)
+```
 
 ## Arguments
 
 ### in_chnnaels
 
+The number of channels in the input image.
 
 ### out_channels
 
+The number of channels produced by the convolution.
 
 ### kernel_size
 
+The size of the convolving kernel.
 
 ### stride (default=1)
 
+The stride of the convolution.
 
 ### padding (default=0)
 
+The zero-padding added to both sides of the input.
+
 ### dilation (default=1)
+
+The spacing between kernel elements.
 
 ### groups (default=1)
 
+The number of blocked connections from input channels to output channels.
+
 ### bias (default=True)
+
+The bias term.
