@@ -1,0 +1,29 @@
+# AdamW
+
+Implements the AdamW optimizer to your model.
+
+[Learn more about AdamW](https://towardsdatascience.com/why-adamw-matters-736223f31b5d?gi=40688c454bc3)
+
+## Usage
+```python copy
+from tinygrad.nn.state import get_parameters
+from tinygrad.nn import optim
+from models.resnet import ResNet
+
+model = ResNet()
+
+for _ in range(5):
+  optimizer = optim.AdamW(get_parameters(model), lr=0.01)
+  # train, eval ...
+```
+
+
+## Arguments 
+
+### params
+
+The parameters of the model.
+
+### lr
+
+The learning rate for the optimizer.

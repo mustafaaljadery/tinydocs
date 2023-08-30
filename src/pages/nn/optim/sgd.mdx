@@ -1,0 +1,26 @@
+# SGD
+
+Implements stochastic gradient descent.
+
+[Learn more about SGD](https://stanford.edu/~rezab/classes/cme323/S15/notes/lec11.pdf)
+
+## Usage
+```python copy
+from tinygrad.nn.state import get_parameters
+from tinygrad.nn import optim
+from models.resnet import ResNet
+
+model = ResNet()
+
+for _ in range(5):
+  optimizer = optim.SGD(get_parameters(model), lr=0.01)
+  # train, eval ...
+```
+
+## Arguments
+
+### params
+The parameters of the model to optimize.
+
+### lr
+The learning rate of the SGD optimizer.

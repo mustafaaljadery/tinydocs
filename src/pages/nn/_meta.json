@@ -1,1 +1,11 @@
-{}
+{
+  "batch-norm-2d": "BatchNorm2d",
+  "conv-2d": "Conv2d",
+  "conv-transpose2d": "ConvTranspose2d",
+  "embedding": "Embedding",
+  "group-norm": "GroupNorm",
+  "instance-norm": "InstanceNorm",
+  "layer-norm-2d": "LayerNorm2d",
+  "layer-norm": "LayerNorm",
+  "linear": "Linear"
+}

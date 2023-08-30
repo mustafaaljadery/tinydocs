@@ -1,0 +1,7 @@
+{
+  "adam": "Adam",
+  "adamw": "AdamW",
+  "lamb": "LAMB",
+  "optimizer": "Optimizer",
+  "sgd": "SGD"
+}

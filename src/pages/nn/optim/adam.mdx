@@ -1,0 +1,29 @@
+# Adam
+
+Implements the Adam optimizer to your model.
+
+[Learn more about the Adam optimizer](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture7.pdf)
+
+## Usage 
+
+```python copy
+from tinygrad.nn.state import get_parameters
+from tinygrad.nn import optim
+from models.resnet import ResNet
+
+model = ResNet()
+
+for _ in range(5):
+  optimizer = optim.Adam(get_parameters(model), lr=0.01)
+  # train, eval ...
+```
+
+## Arguments
+
+### params
+
+The parameters of the model.
+
+### lr
+
+The learning rate for the optimizer.

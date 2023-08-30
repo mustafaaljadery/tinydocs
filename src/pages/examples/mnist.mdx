@@ -1,1 +1,213 @@
+import { FileTree } from 'nextra/components'
+
 # MNIST Example
+
+This is an example of a very simple neural network that is trained on the MNIST dataset. The network is a simple feedforward network with 2 hidden layers.
+
+## Download the data
+
+Begin by downloading the data from [here](https://github.com/tinygrad/tinygrad/tree/master/extra/datasets/mnist).
+
+<FileTree>
+    <FileTree.File name="t10k-images-idx3-ubyte.gz" />
+    <FileTree.File name="t10k-labels-idx1-ubyte.gz" />
+    <FileTree.File name="train-images-idx3-ubyte.gz" />
+    <FileTree.File name="train-labels-idx1-ubyte.gz" />
+</FileTree>
+
+## Create main.py file
+
+Create your `main.py` file to begin writing code.
+
+<FileTree>
+    <FileTree.File name="t10k-images-idx3-ubyte.gz" />
+    <FileTree.File name="t10k-labels-idx1-ubyte.gz" />
+    <FileTree.File name="train-images-idx3-ubyte.gz" />
+    <FileTree.File name="train-labels-idx1-ubyte.gz" />
+    <FileTree.File name="main.py" />
+</FileTree>
+
+## Import Libraries
+```python main.py
+import numpy as np
+import os
+import gzip
+import numpy as np
+from tinygrad.nn import Linear
+from tinygrad.helpers import Timing
+from tinygrad.tensor import Tensor
+from tinygrad.helpers import dtypes
+from tinygrad.nn.optim import SGD
+```
+
+## Fetch MNIST Data
+
+```python copy
+def fetch_mnist():
+  parse = lambda file: np.frombuffer(gzip.open(file).read(), dtype=np.uint8).copy()
+  X_train = parse(os.path.dirname(__file__)+"/train-images-idx3-ubyte.gz")[0x10:].reshape((-1, 28*28)).astype(np.float32)
+  Y_train = parse(os.path.dirname(__file__)+"/train-labels-idx1-ubyte.gz")[8:]
+  X_test = parse(os.path.dirname(__file__)+"/t10k-images-idx3-ubyte.gz")[0x10:].reshape((-1, 28*28)).astype(np.float32)
+  Y_test = parse(os.path.dirname(__file__)+"/t10k-labels-idx1-ubyte.gz")[8:]
+  return X_train, Y_train, X_test, Y_test
+```
+
+## Define the model 
+
+This is just going to be a model with two hidden layers
+  
+```python main.py
+class TinyNet:
+    def __init__(self):
+        self.l1 = Linear(784, 128, bias=False)
+        self.l2 = Linear(128, 10, bias=False)
+
+    def __call__(self, x):
+        x = self.l1(x)
+        x = x.leakyrelu()
+        x = self.l2(x)
+        return x
+
+
+net = TinyNet()
+``` 
+
+## Training
+```python copy
+# Training
+Tensor.training = True
+
+opt = SGD([net.l1.weight, net.l2.weight], lr=3e-4)
+
+X_train, Y_train, X_test, Y_test = fetch_mnist()
+
+for step in range(20000):
+    # random sample a batch
+    samp = np.random.randint(0, X_train.shape[0], size=(64))
+    batch = Tensor(X_train[samp], requires_grad=False)
+    # get the corresponding labels
+    labels = Tensor(Y_train[samp])
+
+    # forward pass
+    out = net(batch)
+
+    # compute loss
+    loss = Tensor.sparse_categorical_crossentropy(out, labels)
+
+    opt.zero_grad()
+
+    loss.backward()
+
+    opt.step()
+
+    pred = out.argmax(axis=-1)
+    acc = (pred == labels).mean()
+
+    if step % 100 == 0:
+        print(f"Step {step} - Loss {loss.numpy()} - Accuracy {acc.numpy()}")
+```
+
+## Evaluation
+Getting the results of your model.
+```python copy
+# Evaluation
+with Timing("Time: "):
+    avg_acc = 0
+
+    for step in range(2000):
+        samp = np.random.randint(0, X_test.shape[0], size=(64))
+        batch = Tensor(X_test[samp], requires_grad=False)
+        labels = Tensor(Y_test[samp])
+
+        out = net(batch)
+
+        pred = out.argmax(axis=-1).numpy()
+        avg_acc += (pred == labels.numpy()).mean()
+
+    print(f"Accuracy {avg_acc / 2000}")
+```
+
+## Entire Code
+
+```python copy
+import numpy as np
+from tinygrad.nn import Linear
+from tinygrad.helpers import Timing
+from tinygrad.tensor import Tensor
+from tinygrad.helpers import dtypes
+from tinygrad.nn.optim import SGD
+import os
+import gzip
+import numpy as np
+
+def fetch_mnist():
+  parse = lambda file: np.frombuffer(gzip.open(file).read(), dtype=np.uint8).copy()
+  X_train = parse(os.path.dirname(__file__)+"/train-images-idx3-ubyte.gz")[0x10:].reshape((-1, 28*28)).astype(np.float32)
+  Y_train = parse(os.path.dirname(__file__)+"/train-labels-idx1-ubyte.gz")[8:]
+  X_test = parse(os.path.dirname(__file__)+"/t10k-images-idx3-ubyte.gz")[0x10:].reshape((-1, 28*28)).astype(np.float32)
+  Y_test = parse(os.path.dirname(__file__)+"/t10k-labels-idx1-ubyte.gz")[8:]
+  return X_train, Y_train, X_test, Y_test
+
+class TinyNet:
+    def __init__(self):
+        self.l1 = Linear(784, 128, bias=False)
+        self.l2 = Linear(128, 10, bias=False)
+
+    def __call__(self, x):
+        x = self.l1(x)
+        x = x.leakyrelu()
+        x = self.l2(x)
+        return x
+
+
+net = TinyNet()
+
+# Training
+Tensor.training = True
+
+opt = SGD([net.l1.weight, net.l2.weight], lr=3e-4)
+
+X_train, Y_train, X_test, Y_test = fetch_mnist()
+
+for step in range(20000):
+    # random sample a batch
+    samp = np.random.randint(0, X_train.shape[0], size=(64))
+    batch = Tensor(X_train[samp], requires_grad=False)
+    # get the corresponding labels
+    labels = Tensor(Y_train[samp])
+
+    # forward pass
+    out = net(batch)
+
+    # compute loss
+    loss = Tensor.sparse_categorical_crossentropy(out, labels)
+
+    opt.zero_grad()
+
+    loss.backward()
+
+    opt.step()
+
+    pred = out.argmax(axis=-1)
+    acc = (pred == labels).mean()
+
+    if step % 100 == 0:
+        print(f"Step {step} - Loss {loss.numpy()} - Accuracy {acc.numpy()}")
+
+# Evaluation
+
+with Timing("Time: "):
+    avg_acc = 0
+
+    for step in range(2000):
+        samp = np.random.randint(0, X_test.shape[0], size=(64))
+        batch = Tensor(X_test[samp], requires_grad=False)
+        labels = Tensor(Y_test[samp])
+
+        out = net(batch)
+
+        pred = out.argmax(axis=-1).numpy()
+        avg_acc += (pred == labels.numpy()).mean()
+
+    print(f"Accuracy {avg_acc / 2000}")
+```

@@ -4,14 +4,20 @@ Creates a linear layer in your neural network. It applies a linear transformatio
 
 ## Usage
 
-```python
+```python copy
+from tinygrad.nn import Linear
+from tinygrad.tensor import Tensor
 
-```
+class TinyNet: 
+    def __init__(self):
+        self.l1 = Linear(784, 128)
+        self.l2 = Linear(128, 10)
 
-## Return Value
-
-```python
-
+    def __call__(self, x):
+      x = self.x1(x)
+      x = x.leakyrelu()
+      x = self.l2(x)
+      return x
 ```
 
 ## Arguments

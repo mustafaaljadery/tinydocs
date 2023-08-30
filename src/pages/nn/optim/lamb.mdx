@@ -5,8 +5,23 @@ Layer-wise Adaptive Moments optimizer for Batch training is an optimizer that co
 [Learn more about LAMB](https://towardsdatascience.com/an-intuitive-understanding-of-the-lamb-optimizer-46f8c0ae4866)
 
 ## Usage
+```python copy
+from tinygrad.nn.state import get_parameters
+from tinygrad.nn import optim
+from models.resnet import ResNet
 
+model = ResNet()
 
-## Return
+for _ in range(5):
+  optimizer = optim.LAMB(get_parameters(model), lr=0.01)
+  # train, eval ...
+```
+
 
 ## Arguments
+
+### params
+The parameters of the model to optimize.
+
+### lr
+The learning rate of the optimizer.
